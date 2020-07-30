@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration Web Form</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="assets/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="form-container">
+                <h1 class="text-center">
+                    Registration Form
+                </h1>
+                <hr>
+                <!-- Form -->
+                <form class="needs-validation" novalidate>
+                    <div class="form-row">
+                        <div class="col-md-6 mb-3">
+                            <label for="validationCustom01">First name</label>
+                            <input type="text" class="form-control" id="validationCustom01" placeholder="First Name" required>
+                            <div class="invalid-feedback">
+                                Please enter your first name.
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="validationCustom02">Last name</label>
+                            <input type="text" class="form-control" id="validationCustom02" placeholder="Last Name" required>
+                            <div class="invalid-feedback">
+                                Please enter your last name.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-6 mb-3">
+                            <label>Date of Birth</label>
+                            <input type="date" name="bday" max="2000-01-01" min="1990-07-31" class="form-control">
+                            <div class="invalid-feedback">
+                                Sorry! You're not eligible for this
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="validationCustom04">NIC</label>
+                            <input type="text" class="form-control" id="validationCustom04" placeholder="123456789V or 123456789123" required>
+                            <div class="invalid-feedback">
+                                Please enter a valid NIC Number.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-6 mb-3">
+                            <label for="validationCustom05">State</label>
+                            <select class="custom-select" id="validationCustom04" required>
+                                    <option selected disabled value="">Select your faculty</option>
+                                    <option>Humanities and Social Sciences</option>
+                                    <option>Applied Sciences</option>
+                                    <option>Management Studies and Commerce</option>
+                                    <option>Medical Sciences</option>
+                                    <option>Graduate Studies</option>
+                                    <option>Technology</option>
+                                    <option>Engineering</option>
+                                    <option>Allied Health Sciences</option>
+                                </select>
+                            <div class="invalid-feedback">
+                                Please select your faculty.
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="validationCustom07">Contact Number</label>
+                            <input type="text" class="form-control" id="validationCustom02" placeholder="+94 12 123 1234" required>
+                            <div class="invalid-feedback">
+                                Please enter a valid mobile number.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-6 mb-3">
+                            <label for="validationCustom06">E-mail</label>
+                            <input type="text" class="form-control" id="validationCustom02" placeholder="username@domain" required>
+                            <div class="invalid-feedback">
+                                Please enter a valid E-mail address.
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="validationCustom06">Confirm E-mail</label>
+                            <input type="text" class="form-control" id="validationCustom02" placeholder="username@domain" required>
+                            <div class="invalid-feedback">
+                                E-mail dosen't match.
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" type="submit">Submit form</button>
+            </div>
+
+            </form>
+
+        </div>
+    </div>
+    </div>
+    <script src="assets/jquery.min.js"></script>
+    <script src="assets/bootstrap.min.js"></script>
+    <script src="assets/script.js"></script>
+</body>
+
+</html>
