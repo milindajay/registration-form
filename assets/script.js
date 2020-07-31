@@ -13,7 +13,7 @@ class VerifyForm {
     constructor(mainform = null) {
         // const inputFields = Array.from(mainForm.children);
         const inputFields = Array.from(document.getElementsByClassName('validate-form'))
-        console.log(inputFields);
+        // console.log(inputFields);
         inputFields.forEach(input => {
             input.addEventListener('blur', (e) => {
                 if (e.target.name === 'firstname' || e.target.name === 'lastname') {
@@ -60,7 +60,7 @@ class VerifyForm {
             let selectedDate = new Date(target.value);
 
             if (selectedDate >= minDate && selectedDate <= maxDate) {
-                console.log(minDate, maxDate, selectedDate);
+                // console.log(minDate, maxDate, selectedDate);
             } else {
                 target.classList.add('error');
                 target.nextElementSibling.textContent = 'Sorry You\'re Not Eligible';
@@ -75,7 +75,17 @@ class VerifyForm {
     verifyNIC() {
 
     }
-    verifyEmail() {
+    
+    verifyEmail(target = '') {
+
+        const emailPattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        if (emailPattern.test(String(emailPattern).toLowerCase())) {
+            (this.emailPattern !== '')
+        }
+        else {
+            target.classList.add('error');
+            target.nextElementSibling.textContent = 'This Email is not Valid'
+        }
 
     }
     confirmEmail() {
