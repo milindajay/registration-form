@@ -4,31 +4,38 @@ class VerifyForm {
 
     fullName = '';
     dateOfBirth;
-    email;
-    contactNumber;
-    faculty;
     nic;
+    faculty;
+    contactNumber;
+    email;
+    confirmEmail;
 
     constructor(mainform = null) {
         // const inputFields = Array.from(mainForm.children);
-        const inputFields = Array.from (document.getElementsByClassName('validate-form'))
+        const inputFields = Array.from(document.getElementsByClassName('validate-form'))
         console.log(inputFields);
         inputFields.forEach(input => {
             input.addEventListener('blur', (e) => {
                 if (e.target.name === 'firstname' || e.target.name === 'lastname') {
                     this.verifyName(e.target);
-                }else if(e.target.name==='dateofbirth'){
+                }
+                else if (e.target.name === 'dateofbirth') {
                     this.verifyDOB(e.target);
-                };
+                }
+                else if (e.target.name === 'nic') {
+                    this.verifyNIC(e.target);
+                }
+                else if (e.target.name === 'email') {
+                    this.verifyEmail(e.target);
+                }
+                else if (e.target.name === 'confirm-email') {
+                    this.confirmEmail(e.target);
+                }
             })
         })
     }
 
-    verifyEmail() {
-
-    }
-
-    verifyName(target = null) {  
+    verifyName(target = null) {
         if (target.value !== '') {
             let fullName = '';
 
@@ -39,33 +46,39 @@ class VerifyForm {
             }
 
             this.fullName = fullName;
-            
+
         } else {
             target.classList.add('error');
             target.nextElementSibling.textContent = 'Please Enter A Valid Value';
         }
     }
 
-    verifyDOB(target='') {
-        if(target.value!==''){
+    verifyDOB(target = '') {
+        if (target.value !== '') {
             let minDate = new Date('1990-07-31');
             let maxDate = new Date('2000-01-01');
             let selectedDate = new Date(target.value);
 
-            if(selectedDate >= minDate && selectedDate <= maxDate){
-                console.log(minDate , maxDate , selectedDate);
-            }else{
+            if (selectedDate >= minDate && selectedDate <= maxDate) {
+                console.log(minDate, maxDate, selectedDate);
+            } else {
                 target.classList.add('error');
                 target.nextElementSibling.textContent = 'Sorry You\'re Not Eligible';
             }
-            
-        }else{
+
+        } else {
             target.classList.add('error');
             target.nextElementSibling.textContent = 'Please Enter A Valid Date';
         }
     }
 
     verifyNIC() {
+
+    }
+    verifyEmail() {
+
+    }
+    confirmEmail() {
 
     }
 
