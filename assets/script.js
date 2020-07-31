@@ -1,3 +1,4 @@
+/*
 // Example starter JavaScript for disabling form submissions if there are invalid fields
 (function() {
     'use strict';
@@ -16,6 +17,7 @@
         });
     }, false);
 })();
+*/
 
 // FORM VALIDATION
 
@@ -32,7 +34,7 @@ class VerifyForm {
         const inputFields = Array.from(mainForm.children);
         inputFields.forEach(input => {
             input.children[0].addEventListener('blur', (e) => {
-                if (e.target.name === 'firstname' || e.target.name === 'lastname') {
+                if (e.target.name === 'FirstName' || e.target.name === 'LastName') {
                     this.verifyName(e.target);
                 }else if(e.target.name==='dateofbirth'){
                     this.verifyDOB(e.target);
