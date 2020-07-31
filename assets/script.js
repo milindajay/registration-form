@@ -28,9 +28,6 @@ class VerifyForm {
                 else if (e.target.name === 'email') {
                     this.verifyEmail(e.target);
                 }
-                else if (e.target.name === 'confirm-email') {
-                    this.confirmEmail(e.target);
-                }
             })
         })
     }
@@ -72,15 +69,19 @@ class VerifyForm {
         }
     }
 
-    verifyNIC() {
+    // verifyNIC() {
 
-    }
-    
+    // }
+
     verifyEmail(target = '') {
 
         const emailPattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        if (emailPattern.test(String(emailPattern).toLowerCase())) {
-            (this.emailPattern !== '')
+        if (emailPattern.test(String(target.value).toLowerCase())) {
+            (target.value !== ''); {
+                if (this.emailPattern === '') {
+                    emailPattern = target.value
+                }
+            }
         }
         else {
             target.classList.add('error');
@@ -88,9 +89,9 @@ class VerifyForm {
         }
 
     }
-    confirmEmail() {
+    // confirmEmail() {
 
-    }
+    // }
 
 }
 
