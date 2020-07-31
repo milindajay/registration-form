@@ -24,40 +24,32 @@
                 <form class="needs-validation" id="mainForm">
                     <div class="form-row">
                         <div class="col-md-6 mb-3">
-                            <label for="validationCustom01">First name</label>
-                            <input type="text" class="form-control" name="FirstName" placeholder="First Name" required>
-                            <div class="invalid-feedback">
-                                Please enter your first name.
-                            </div>
+                            <label>First name</label>
+                            <input type="text" class="form-control validate-form" name="firstname" placeholder="First Name" required>
+                            <span class="error-message"></span>
                         </div>
                         <div class="col-md-6 mb-3">
-                            <label for="validationCustom02">Last name</label>
-                            <input type="text" class="form-control" name="LastName" placeholder="Last Name" required>
-                            <div class="invalid-feedback">
-                                Please enter your last name.
-                            </div>
+                            <label>Last name</label>
+                            <input type="text" class="form-control validate-form" name="lastname" placeholder="Last Name" required>
+                            <span class="error-message"></span>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="col-md-6 mb-3">
                             <label>Date of Birth</label>
-                            <input type="date" name="bday" max="2000-01-01" min="1990-07-31" class="form-control">
-                            <div class="invalid-feedback">
-                                Sorry! you are not eligible for the competition.
-                            </div>
+                            <input type="date" name="dateofbirth" class="form-control validate-form">
+                            <span class="error-message"></span>
                         </div>
                         <div class="col-md-6 mb-3">
-                            <label for="validationCustom04">NIC</label>
-                            <input type="text" class="form-control" id="validationCustom04" placeholder="123456789V or 123456789123" required>
-                            <div class="invalid-feedback">
-                                Please enter a valid NIC Number.
-                            </div>
+                            <label>NIC</label>
+                            <input type="text" class="form-control validate-form" name="nic" placeholder="123456789V or 123456789123" required>
+                            <span class="error-message"></span>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="col-md-6 mb-3">
-                            <label for="validationCustom05">State</label>
-                            <select class="custom-select" id="validationCustom04" required>
+                            <label>State</label>
+                            <select class="custom-select" name="faculty" required>
                                     <option selected disabled value="">Select your faculty</option>
                                     <option>Humanities and Social Sciences</option>
                                     <option>Applied Sciences</option>
@@ -68,32 +60,24 @@
                                     <option>Engineering</option>
                                     <option>Allied Health Sciences</option>
                                 </select>
-                            <div class="invalid-feedback">
-                                Please select your faculty.
-                            </div>
+                                <span class="error-message"></span>
                         </div>
                         <div class="col-md-6 mb-3">
-                            <label for="validationCustom07">Contact Number</label>
-                            <input type="text" class="form-control" id="validationCustom02" placeholder="+94 12 123 1234" required>
-                            <div class="invalid-feedback">
-                                Please enter a valid mobile number.
-                            </div>
+                            <label>Contact Number</label>
+                            <input type="text" class="form-control validate-form" name="contact-number" placeholder="+94 12 123 1234" required>
+                            <span class="error-message"></span>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="col-md-6 mb-3">
-                            <label for="validationCustom06">E-mail</label>
-                            <input type="text" class="form-control" id="validationCustom02" placeholder="username@domain" required>
-                            <div class="invalid-feedback">
-                                Please enter a valid E-mail address.
-                            </div>
+                            <label>E-mail</label>
+                            <input type="email" class="form-control validate-form" name="email" placeholder="username@domain" required>
+                            <span class="error-message"></span>
                         </div>
                         <div class="col-md-6 mb-3">
-                            <label for="validationCustom06">Confirm E-mail</label>
-                            <input type="text" class="form-control" id="validationCustom02" placeholder="username@domain" required>
-                            <div class="invalid-feedback">
-                                E-mail dosen't match.
-                            </div>
+                            <label>Confirm E-mail</label>
+                            <input type="email" class="form-control validate-form" name="confirm-email" placeholder="username@domain" required>
+                            <span class="error-message"></span>
                         </div>
                     </div>
                     <button class="btn btn-primary" type="submit">Submit</button>

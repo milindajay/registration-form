@@ -1,24 +1,3 @@
-/*
-// Example starter JavaScript for disabling form submissions if there are invalid fields
-(function() {
-    'use strict';
-    window.addEventListener('load', function() {
-        // Fetch all the forms we want to apply custom Bootstrap validation styles to
-        var forms = document.getElementsByClassName('needs-validation');
-        // Loop over them and prevent submission
-        var validation = Array.prototype.filter.call(forms, function(form) {
-            form.addEventListener('submit', function(event) {
-                if (form.checkValidity() === false) {
-                    event.preventDefault();
-                    event.stopPropagation();
-                }
-                form.classList.add('was-validated');
-            }, false);
-        });
-    }, false);
-})();
-*/
-
 // FORM VALIDATION
 
 class VerifyForm {
@@ -31,10 +10,12 @@ class VerifyForm {
     nic;
 
     constructor(mainform = null) {
-        const inputFields = Array.from(mainForm.children);
+        // const inputFields = Array.from(mainForm.children);
+        const inputFields = Array.from (document.getElementsByClassName('validate-form'))
+        console.log(inputFields);
         inputFields.forEach(input => {
-            input.children[0].addEventListener('blur', (e) => {
-                if (e.target.name === 'FirstName' || e.target.name === 'LastName') {
+            input.addEventListener('blur', (e) => {
+                if (e.target.name === 'firstname' || e.target.name === 'lastname') {
                     this.verifyName(e.target);
                 }else if(e.target.name==='dateofbirth'){
                     this.verifyDOB(e.target);
